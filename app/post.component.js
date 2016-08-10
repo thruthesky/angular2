@@ -9,17 +9,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
+var post_service_1 = require('./post.service');
+var http_1 = require('@angular/http');
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(postService) {
+        this.postService = postService;
+        this.postService.getPosts()
+            .subscribe(function (posts) { return console.log(posts); });
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: '<h1>Hello, world! Hello, you!</h1>'
+            template: '<h1>Hello, world! Hello, you!</h1>',
+            providers: [post_service_1.PostService, http_1.HTTP_PROVIDERS]
         }), 
-        __metadata('design:paramtypes', [])
+        __metadata('design:paramtypes', [post_service_1.PostService])
     ], AppComponent);
     return AppComponent;
 }());
 exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+//# sourceMappingURL=post.component.js.map
