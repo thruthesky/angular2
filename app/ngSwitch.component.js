@@ -9,18 +9,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var NgifComponent = (function () {
-    function NgifComponent() {
-        this.books = [''];
+var NgSwitchComponent = (function () {
+    function NgSwitchComponent() {
     }
-    NgifComponent = __decorate([
+    NgSwitchComponent = __decorate([
         core_1.Component({
             selector: 'holder',
-            template: "\n    <h2>Books</h2>\n    <div [hidden]=\"books.length == 0\">\n        List of Books\n    </div>\n    <div [hidden]=\"books.length > 0\">\n        You don't have any books.\n    </div>\n    "
+            template: "\n        Hi\n    "
         }), 
         __metadata('design:paramtypes', [])
-    ], NgifComponent);
-    return NgifComponent;
+    ], NgSwitchComponent);
+    return NgSwitchComponent;
 }());
-exports.NgifComponent = NgifComponent;
-//# sourceMappingURL=ngif.component.js.map
+exports.NgSwitchComponent = NgSwitchComponent;
+//# sourceMappingURL=ngSwitch.component.js.map
