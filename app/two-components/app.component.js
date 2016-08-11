@@ -12,6 +12,7 @@ var platform_browser_dynamic_1 = require('@angular/platform-browser-dynamic');
 var core_1 = require('@angular/core');
 var core_2 = require('@angular/core');
 var platform_browser_1 = require('@angular/platform-browser');
+// 부모 컴포넌트
 var AppComponent = (function () {
     function AppComponent() {
         this.firstName = 'Jung EunSu';
@@ -25,6 +26,8 @@ var AppComponent = (function () {
     ], AppComponent);
     return AppComponent;
 }());
+// 자식 컴포넌트
+// [person] 을 @Input() 으로 decorate 하고 binding
 var ChildComponent = (function () {
     function ChildComponent() {
     }
@@ -41,6 +44,7 @@ var ChildComponent = (function () {
     ], ChildComponent);
     return ChildComponent;
 }());
+// 사용하는 모든 컴포넌트를 declarations 에 등록
 var AppModule = (function () {
     function AppModule() {
     }
@@ -60,5 +64,6 @@ var AppModule = (function () {
     return AppModule;
 }());
 exports.AppModule = AppModule;
+// app 실행.
 platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(AppModule);
 //# sourceMappingURL=app.component.js.map
