@@ -12,6 +12,8 @@ export class HeroesComponent implements OnInit {
     private title: string = 'Tour of heroes';
     private heroes: Hero[];
     private selectedHero: Hero;
+    private addingHero: boolean = false;
+    private error: boolean = false;
 
     constructor(private router: Router, private heroService: HeroService) { }
     getHeroes() {
@@ -30,4 +32,24 @@ export class HeroesComponent implements OnInit {
         let link = ['/detail', hero.id];
         this.router.navigate(link);
     }
+    addHero() {
+      this.addingHero = true;
+      this.selectedHero = null;
+    }
+    close(savedHero: Hero) {
+  this.addingHero = false;
+  if (savedHero) { this.getHeroes(); }
 }
+deleteHero(hero: Hero, event: any) {
+  event.stopPropagation();
+  this.heroService
+      .delete(hero)
+      .then(res => {
+        this.heroes = this.heroes.filter(h => h !== hero);
+        if (this.selectedHero === hero) { this.selectedHero = null; }
+      })
+      .catch(error => this.error = error);
+}
+
+}
+

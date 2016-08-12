@@ -2,6 +2,7 @@
  * Created by thruthesky on 2016-08-12.
  */
 import { Component } from '@angular/core';
+import './rxjs-extensions';
 @Component({
     selector: 'my-app',
     styleUrls: ['app/hero/_app.component.css'],

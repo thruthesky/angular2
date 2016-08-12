@@ -9,17 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var AboutComponent = (function () {
-    function AboutComponent() {
+var http_1 = require('@angular/http');
+var HeroSearchService = (function () {
+    function HeroSearchService(http) {
+        this.http = http;
     }
-    AboutComponent = __decorate([
-        core_1.Component({
-            selector: 'about',
-            template: "\n    This is about....\n    "
-        }), 
-        __metadata('design:paramtypes', [])
-    ], AboutComponent);
-    return AboutComponent;
+    HeroSearchService.prototype.search = function (term) {
+        return this.http
+            .get("app/heroes/?name=" + term)
+            .map(function (r) { return r.json().data; });
+    };
+    HeroSearchService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [http_1.Http])
+    ], HeroSearchService);
+    return HeroSearchService;
 }());
-exports.AboutComponent = AboutComponent;
-//# sourceMappingURL=about.component.js.map
+exports.HeroSearchService = HeroSearchService;
+//# sourceMappingURL=hero-search.service.js.map
