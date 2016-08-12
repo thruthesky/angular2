@@ -8,6 +8,7 @@ import { bootstrap } from '@angular/platform-browser-dynamic';
     `,
     providers: [HelloService]
 })
+
 class AppComponent implements OnInit {
     yourName: string = "There";
     constructor(private helloService: HelloService ) {}
@@ -16,5 +17,5 @@ class AppComponent implements OnInit {
             .then( x => this.yourName = x );
     }
 }
-bootstrap( AppComponent );
 
+bootstrap( AppComponent );
