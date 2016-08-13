@@ -22,7 +22,8 @@
       //System.import('app/single-script-run/bootstrap+root-component').catch( function( e ) { } );
       //System.import('app/service/hello').catch( function( e ) { } );
       //System.import('app/route/main').catch(function(err){ console.error(err); });
-      System.import('app/http/main').catch( e => console.log( "ERROR ON LOADING ROOT COMPONENT : ", e ) );
+      //System.import('app/http/main').catch( e => console.log( "ERROR ON LOADING ROOT COMPONENT : ", e ) );
+      System.import('app/http-very-simple/app.component').catch( e => console.log( e ) );
     </script>
   </head>
   <!-- 3. Display the application -->

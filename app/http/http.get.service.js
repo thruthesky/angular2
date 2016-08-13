@@ -15,31 +15,13 @@ require('rxjs/add/operator/map');
 var GetService = (function () {
     function GetService(http) {
         this.http = http;
-        this.url = "http://jsonplaceholder.typicode.com/posts";
+        this.url = "http://work.org/tmp/j.php";
     }
     GetService.prototype.getUser = function () {
         return this.http.get(this.url)
             .toPromise()
-            .then(function (response) { return response.json().data; })
+            .then(function (r) { return r.json(); }) // 여기서 then 객체를 리턴하는가? this 이런걸 리턴하나?
             .catch(this.handleError);
-        /*
-        let q = this.http.get( this.url )
-            //.map( res => res.json() );
-        let i_promise = q.toPromise();
-
-        return i_promise.then( function( res ) : Object[] {
-            let data = res.json();
-            return data;
-        });
-
-        */
-        /*
-
-
-            .toPromise()
-            .then( response => response.json().data as string[] )
-            .catch( (e:any) => e.message || e );
-            */
     };
     GetService.prototype.handleError = function (error) {
         console.error('An error occurred', error);

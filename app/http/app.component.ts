@@ -12,9 +12,12 @@ export class AppComponent {
     ngOnInit() {
         console.log("Data from getService() : ");
 
-        
-        this.getService.getUser()
-            .then( x => console.log(x) );
-
+        var promise = this.getService.getUser();
+        // console.log(users);
+        promise.then( function( response ) {
+            console.log(response);
+            var data = response.json();
+            console.log(data);
+        });
     }
 }

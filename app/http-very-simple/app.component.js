@@ -9,29 +9,37 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var http_get_service_1 = require('./http.get.service');
-var AppComponent = (function () {
-    function AppComponent(getService) {
-        this.getService = getService;
+var HelloService = (function () {
+    function HelloService() {
     }
-    AppComponent.prototype.ngOnInit = function () {
-        console.log("Data from getService() : ");
-        var promise = this.getService.getUser();
-        // console.log(users);
-        promise.then(function (response) {
-            console.log(response);
-            var data = response.json();
-            console.log(data);
-        });
+    HelloService.prototype.getService = function () {
+        return Promise.resolve("This is my service.");
     };
+    HelloService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [])
+    ], HelloService);
+    return HelloService;
+}());
+exports.HelloService = HelloService;
+var AppComponent = (function () {
+    function AppComponent(hello) {
+        var _this = this;
+        this.hello = hello;
+        this.message = "Message";
+        console.log('http very simple constructor...');
+        hello.getService().then(function (x) { return _this.message = x; });
+    }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    Hello, there!\n    ",
+            template: "<h1>Simplest App</h1><p>{{ message }}</p>",
+            providers: [HelloService]
         }), 
-        __metadata('design:paramtypes', [http_get_service_1.GetService])
+        __metadata('design:paramtypes', [HelloService])
     ], AppComponent);
     return AppComponent;
 }());
-exports.AppComponent = AppComponent;
+var platform_browser_dynamic_1 = require('@angular/platform-browser-dynamic');
+platform_browser_dynamic_1.bootstrap(AppComponent);
 //# sourceMappingURL=app.component.js.map

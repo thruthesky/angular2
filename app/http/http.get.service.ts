@@ -5,34 +5,14 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class GetService {
-    private url: string = "http://jsonplaceholder.typicode.com/posts";
+    private url: string = "http://work.org/tmp/j.php";
     constructor( private http: Http ) {}
     getUser() {
         
     return this.http.get(this.url)
-               .toPromise()
-               .then(response => response.json().data )
+               .toPromise( )
+               .then( r => r.json() ) // 여기서 then 객체를 리턴하는가? this 이런걸 리턴하나?
                .catch(this.handleError);
-        /*
-        let q = this.http.get( this.url )
-            //.map( res => res.json() );
-        let i_promise = q.toPromise();
-
-        return i_promise.then( function( res ) : Object[] {
-            let data = res.json();
-            return data;
-        });
-
-        */
-
-        /*
-
-
-            .toPromise()
-            .then( response => response.json().data as string[] )
-            .catch( (e:any) => e.message || e );
-            */
-            
     }
     
   private handleError(error: any) {

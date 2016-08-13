@@ -9,17 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var SimpleComponent = (function () {
-    function SimpleComponent() {
+var AppComponent = (function () {
+    function AppComponent() {
+        console.log('http very simple constructor...');
     }
-    SimpleComponent = __decorate([
+    AppComponent = __decorate([
         core_1.Component({
-            selector: 'holder',
-            template: '<b>This is simple component<b>'
+            selector: 'my-app',
+            template: "<h1>Simplest App</h1>"
         }), 
         __metadata('design:paramtypes', [])
-    ], SimpleComponent);
-    return SimpleComponent;
+    ], AppComponent);
+    return AppComponent;
 }());
-exports.SimpleComponent = SimpleComponent;
-//# sourceMappingURL=simple.component.js.map
+var platform_browser_dynamic_1 = require('@angular/platform-browser-dynamic');
+platform_browser_dynamic_1.bootstrap(AppComponent);
+//# sourceMappingURL=app.component.js.map
