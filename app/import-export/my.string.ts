@@ -1,0 +1,1 @@
+export var myString:string = "This is my string";

@@ -9,34 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var HelloService = (function () {
-    function HelloService() {
-    }
-    HelloService.prototype.getService = function () {
-        return Promise.resolve("This is my service.");
-    };
-    HelloService = __decorate([
-        core_1.Injectable(), 
-        __metadata('design:paramtypes', [])
-    ], HelloService);
-    return HelloService;
-}());
-exports.HelloService = HelloService;
+//import { myInt as myNumber, myString as myMessage } from './export';
+var ex = require('./export');
+require('./message');
 var AppComponent = (function () {
-    function AppComponent(hello) {
-        var _this = this;
-        this.hello = hello;
-        this.message = "Message";
-        console.log('http very simple constructor...');
-        hello.getService().then(function (x) { return _this.message = x; });
+    function AppComponent() {
+        this.str = ex.myString;
+        this.digit = ex.myInt;
+        message('import-export app.component constructor...');
+        message('constructor end ...');
     }
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "<h1>Simplest App</h1><p>{{ message }}</p>",
-            providers: [HelloService]
+            template: "<h1>Simplest App</h1>\n            {{ str }}\n            {{ digit }}\n    "
         }), 
-        __metadata('design:paramtypes', [HelloService])
+        __metadata('design:paramtypes', [])
     ], AppComponent);
     return AppComponent;
 }());

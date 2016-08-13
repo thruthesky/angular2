@@ -1,12 +1,10 @@
 import { Component, Injectable } from '@angular/core';
-
 @Injectable()
-export class HelloService {
+class HelloService {
     getService () {
         return Promise.resolve("This is my service.");
     }
 }
-
 @Component({
     selector: 'my-app',
     template: `<h1>Simplest App</h1><p>{{ message }}</p>`,
@@ -21,3 +19,4 @@ class AppComponent {
 }
 import { bootstrap } from '@angular/platform-browser-dynamic';
 bootstrap( AppComponent );
+

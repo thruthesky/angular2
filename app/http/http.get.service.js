@@ -20,7 +20,7 @@ var GetService = (function () {
     GetService.prototype.getUser = function () {
         return this.http.get(this.url)
             .toPromise()
-            .then(function (r) { return r.json(); }) // 여기서 then 객체를 리턴하는가? this 이런걸 리턴하나?
+            .then(function (r) { return r.json(); }) // returns promise
             .catch(this.handleError);
     };
     GetService.prototype.handleError = function (error) {

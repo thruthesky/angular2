@@ -11,7 +11,7 @@ export class GetService {
         
     return this.http.get(this.url)
                .toPromise( )
-               .then( r => r.json() ) // 여기서 then 객체를 리턴하는가? this 이런걸 리턴하나?
+               .then( r => r.json() ) // returns promise
                .catch(this.handleError);
     }
     
