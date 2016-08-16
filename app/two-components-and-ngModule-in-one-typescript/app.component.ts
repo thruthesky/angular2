@@ -25,7 +25,7 @@ class AppComponent {
     `
 })
 class ChildComponent {
-    @Input() person;
+    @Input() person: string;
 }
 
 // 사용하는 모든 컴포넌트를 declarations 에 등록
