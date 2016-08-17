@@ -20,7 +20,7 @@ class Nginx {
     <input #phone placeholder="phone number">
     <ul *ngIf="users">
     <li *ngFor="let user of users">
-        {{ user.name }}
+        {{ user.name }} ( {{ user.age }})
     </li>
     </ul>
     `,

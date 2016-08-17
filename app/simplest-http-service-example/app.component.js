@@ -55,7 +55,7 @@ System.register(['@angular/core', '@angular/http', 'rxjs/add/operator/toPromise'
                 AppComponent = __decorate([
                     core_1.Component({
                         selector: 'my-app',
-                        template: "\n    <h1>Simplest App</h1><p>{{ message }}</p>\n    <input #phone placeholder=\"phone number\">\n    <ul *ngIf=\"users\">\n    <li *ngFor=\"let user of users\">\n        {{ user.name }}\n    </li>\n    </ul>\n    ",
+                        template: "\n    <h1>Simplest App</h1><p>{{ message }}</p>\n    <input #phone placeholder=\"phone number\">\n    <ul *ngIf=\"users\">\n    <li *ngFor=\"let user of users\">\n        {{ user.name }} ( {{ user.age }})\n    </li>\n    </ul>\n    ",
                         providers: [Nginx, http_1.HTTP_PROVIDERS] // HTTP_PROVIDERS 를 왜 여기에서 provide 해야 하나?
                     }), 
                     __metadata('design:paramtypes', [Nginx])
