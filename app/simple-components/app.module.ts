@@ -7,4 +7,6 @@ import { ComponentOne } from './app.component';
     declarations: [ ComponentOne, ComponentTwo ],
     bootstrap: [ ComponentOne ]
 } )
-export class AppModule {}
+export class AppModule {
+    
+}
